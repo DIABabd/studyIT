@@ -27,7 +27,22 @@
     "markComplete": "وضع علامة مكتمل",
     "markIncomplete": "وضع علامة غير مكتمل",
     "completed": "مكتمل",
-    "notCompleted": "مفتوح"
+    "notCompleted": "مفتوح",
+    "media": "المواد"
+  },
+  "attachments": {
+    "title": "ملاحظاتي وملفاتي",
+    "addNote": "ملاحظة",
+    "addFile": "ملف",
+    "noteLabel": "ملاحظة",
+    "notePlaceholder": "اكتب ملاحظتك هنا...",
+    "save": "حفظ",
+    "remove": "حذف",
+    "empty": "لم تتم إضافة ملاحظات أو ملفات بعد.",
+    "tooLarge": "الملف كبير جداً (الحد الأقصى 5 ميغابايت)",
+    "downloadPdf": "تحميل PDF",
+    "showPdf": "عرض PDF",
+    "hidePdf": "إخفاء PDF"
   },
   "search": {
     "placeholder": "البحث عن مواضيع...",

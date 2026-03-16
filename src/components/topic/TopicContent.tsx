@@ -1,10 +1,71 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { t as bt } from '../../utils/content';
-import type { TopicContent as TopicContentType } from '../../types';
+import type { TopicContent as TopicContentType, MediaBlock } from '../../types';
 
 interface TopicContentProps {
   content: TopicContentType;
+}
+
+function MediaBlockRenderer({ block }: { block: MediaBlock }) {
+  const { lang } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
+
+  switch (block.type) {
+    case 'image':
+      return (
+        <div className="my-3">
+          <img
+            src={block.url}
+            alt={block.caption ? bt(block.caption, lang) : ''}
+            className={`rounded-lg border border-border cursor-pointer transition-all ${
+              expanded ? 'max-w-full' : 'max-w-[500px] max-h-[300px] object-contain'
+            }`}
+            onClick={() => setExpanded(!expanded)}
+          />
+          {block.caption && (
+            <p className="text-xs text-text-muted mt-1 italic">{bt(block.caption, lang)}</p>
+          )}
+        </div>
+      );
+    case 'pdf':
+      return (
+        <div className="my-3">
+          <a
+            href={block.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface border border-border hover:border-primary/30 transition-colors"
+          >
+            <span className="text-lg">📄</span>
+            <span className="text-sm font-medium text-primary">{bt(block.label, lang)}</span>
+          </a>
+        </div>
+      );
+    case 'text':
+      return (
+        <div className="my-3 bg-surface rounded-lg p-3 text-text text-sm leading-relaxed border-s-3 border-accent/30">
+          {bt(block.content, lang)}
+        </div>
+      );
+    case 'code':
+      return (
+        <div className="my-3">
+          <div className="bg-gray-900 rounded-lg overflow-hidden">
+            <div className="flex items-center justify-between px-3 py-1.5 bg-gray-800">
+              <span className="text-xs text-gray-400">{block.language}</span>
+            </div>
+            <pre className="p-3 overflow-x-auto text-sm text-gray-100 leading-relaxed">
+              <code>{block.code}</code>
+            </pre>
+          </div>
+          {block.caption && (
+            <p className="text-xs text-text-muted mt-1 italic">{bt(block.caption, lang)}</p>
+          )}
+        </div>
+      );
+  }
 }
 
 export function TopicContent({ content }: TopicContentProps) {
@@ -60,6 +121,21 @@ export function TopicContent({ content }: TopicContentProps) {
               </div>
             ))}
           </div>
+        </section>
+      )}
+
+      {/* Media blocks (images, PDFs, text, code) */}
+      {content.media && content.media.length > 0 && (
+        <section className="bg-white rounded-xl border border-border p-5">
+          <h3 className="flex items-center gap-2 text-sm font-semibold text-text mb-3 uppercase tracking-wide">
+            <span className="w-8 h-8 rounded-lg bg-surface-dark flex items-center justify-center text-base">
+              📂
+            </span>
+            {t('topic.media')}
+          </h3>
+          {content.media.map((block, i) => (
+            <MediaBlockRenderer key={i} block={block} />
+          ))}
         </section>
       )}
 

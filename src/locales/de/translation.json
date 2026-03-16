@@ -27,7 +27,22 @@
     "markComplete": "Als erledigt markieren",
     "markIncomplete": "Als unerledigt markieren",
     "completed": "Erledigt",
-    "notCompleted": "Offen"
+    "notCompleted": "Offen",
+    "media": "Materialien"
+  },
+  "attachments": {
+    "title": "Meine Notizen & Dateien",
+    "addNote": "Notiz",
+    "addFile": "Datei",
+    "noteLabel": "Notiz",
+    "notePlaceholder": "Eigene Notiz schreiben...",
+    "save": "Speichern",
+    "remove": "Entfernen",
+    "empty": "Noch keine eigenen Notizen oder Dateien hinzugefügt.",
+    "tooLarge": "Datei zu groß (max. 5 MB)",
+    "downloadPdf": "PDF herunterladen",
+    "showPdf": "PDF anzeigen",
+    "hidePdf": "PDF ausblenden"
   },
   "search": {
     "placeholder": "Themen suchen...",

@@ -39,6 +39,22 @@ export interface TopicContent {
   examples: BilingualText[];
   examRelevance: BilingualText;
   summary: BilingualText;
+  media?: MediaBlock[];
+}
+
+export type MediaBlock =
+  | { type: 'image'; url: string; caption?: BilingualText }
+  | { type: 'pdf'; url: string; label: BilingualText }
+  | { type: 'text'; content: BilingualText }
+  | { type: 'code'; language: string; code: string; caption?: BilingualText };
+
+export interface UserAttachment {
+  id: string;
+  topicPath: string;
+  type: 'note' | 'image' | 'pdf';
+  content: string;       // text for notes, base64 data URL for images/PDFs
+  fileName?: string;     // original file name for images/PDFs
+  createdAt: string;
 }
 
 export interface ProgressState {

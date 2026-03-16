@@ -3,6 +3,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import { useProgress } from '../hooks/useProgress';
 import { findTopicByCompoundId } from '../data/exams';
 import { TopicContent } from '../components/topic/TopicContent';
+import { UserAttachments } from '../components/topic/UserAttachments';
 import { MarkCompleteButton } from '../components/ui/MarkCompleteButton';
 import { t as bt } from '../utils/content';
 import { useTranslation } from 'react-i18next';
@@ -42,6 +43,10 @@ export function TopicPage() {
       </div>
 
       <TopicContent content={topic.content} />
+
+      <div className="mt-6">
+        <UserAttachments topicPath={topicPath} />
+      </div>
 
       <div className="mt-8 pb-8">
         <MarkCompleteButton completed={completed} onToggle={() => toggleComplete(topicPath)} />
