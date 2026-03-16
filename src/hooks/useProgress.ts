@@ -9,8 +9,10 @@ const defaultState: ProgressState = {
   notes: {},
 };
 
+let cachedState: ProgressState = getItem(STORAGE_KEY, defaultState);
+
 function getSnapshot(): ProgressState {
-  return getItem(STORAGE_KEY, defaultState);
+  return cachedState;
 }
 
 let listeners: Array<() => void> = [];
@@ -18,7 +20,10 @@ let listeners: Array<() => void> = [];
 function subscribe(callback: () => void) {
   listeners.push(callback);
   const handler = (e: StorageEvent) => {
-    if (e.key === STORAGE_KEY) callback();
+    if (e.key === STORAGE_KEY) {
+      cachedState = getItem(STORAGE_KEY, defaultState);
+      callback();
+    }
   };
   window.addEventListener('storage', handler);
   return () => {
@@ -27,7 +32,9 @@ function subscribe(callback: () => void) {
   };
 }
 
-function notify() {
+function updateAndNotify(newState: ProgressState) {
+  cachedState = newState;
+  setItem(STORAGE_KEY, newState);
   listeners.forEach((l) => l());
 }
 
@@ -41,14 +48,13 @@ export function useProgress() {
 
   const toggleComplete = useCallback(
     (path: string) => {
-      const current = getItem(STORAGE_KEY, defaultState);
-      if (current.completedTopics[path]) {
-        delete current.completedTopics[path];
+      const next = { ...cachedState, completedTopics: { ...cachedState.completedTopics } };
+      if (next.completedTopics[path]) {
+        delete next.completedTopics[path];
       } else {
-        current.completedTopics[path] = true;
+        next.completedTopics[path] = true;
       }
-      setItem(STORAGE_KEY, current);
-      notify();
+      updateAndNotify(next);
     },
     []
   );
@@ -59,17 +65,13 @@ export function useProgress() {
       let completed = 0;
 
       for (const exam of exams) {
-        if (!prefix || prefix === exam.id) {
-          for (const part of exam.parts) {
-            if (!prefix || prefix === exam.id || prefix === `${exam.id}.${part.id}`) {
-              for (const group of part.topicGroups) {
-                for (const topic of group.topics) {
-                  const key = `${exam.id}.${part.id}.${group.id}.${topic.id}`;
-                  if (key.startsWith(prefix)) {
-                    total++;
-                    if (state.completedTopics[key]) completed++;
-                  }
-                }
+        for (const part of exam.parts) {
+          for (const group of part.topicGroups) {
+            for (const topic of group.topics) {
+              const key = `${exam.id}.${part.id}.${group.id}.${topic.id}`;
+              if (key.startsWith(prefix)) {
+                total++;
+                if (state.completedTopics[key]) completed++;
               }
             }
           }
