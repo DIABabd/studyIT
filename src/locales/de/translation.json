@@ -1,0 +1,60 @@
+{
+  "app": {
+    "title": "StudyIT",
+    "subtitle": "IHK IT-Prüfungsvorbereitung"
+  },
+  "home": {
+    "title": "Prüfungsvorbereitung",
+    "subtitle": "Wähle eine Prüfung zum Lernen",
+    "addExam": "Neue Prüfung hinzufügen",
+    "progress": "{{completed}} von {{total}} erledigt",
+    "placeholder": "Inhalt kommt bald"
+  },
+  "exam": {
+    "parts": "Prüfungsteile",
+    "topicsCompleted": "{{completed}}/{{total}} Themen erledigt"
+  },
+  "part": {
+    "topics": "Themen",
+    "topicGroups": "Themengruppen"
+  },
+  "topic": {
+    "definition": "Definition",
+    "keyPoints": "Wichtige Punkte",
+    "examples": "Beispiele",
+    "examRelevance": "Prüfungsrelevanz",
+    "summary": "Zusammenfassung",
+    "markComplete": "Als erledigt markieren",
+    "markIncomplete": "Als unerledigt markieren",
+    "completed": "Erledigt",
+    "notCompleted": "Offen"
+  },
+  "search": {
+    "placeholder": "Themen suchen...",
+    "noResults": "Keine Ergebnisse gefunden",
+    "results": "{{count}} Ergebnisse"
+  },
+  "modal": {
+    "addExam": "Prüfung hinzufügen",
+    "examNameDe": "Name (Deutsch)",
+    "examNameAr": "Name (Arabisch)",
+    "examDescDe": "Beschreibung (Deutsch)",
+    "examDescAr": "Beschreibung (Arabisch)",
+    "examIcon": "Icon (Emoji)",
+    "cancel": "Abbrechen",
+    "create": "Erstellen"
+  },
+  "common": {
+    "back": "Zurück",
+    "home": "Start",
+    "completed": "Erledigt",
+    "notCompleted": "Offen",
+    "loading": "Laden...",
+    "notFound": "Seite nicht gefunden",
+    "notFoundDesc": "Die gesuchte Seite existiert nicht.",
+    "goHome": "Zur Startseite"
+  },
+  "lang": {
+    "toggle": "العربية"
+  }
+}

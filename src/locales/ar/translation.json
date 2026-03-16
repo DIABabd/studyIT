@@ -1,0 +1,60 @@
+{
+  "app": {
+    "title": "StudyIT",
+    "subtitle": "التحضير لامتحان IHK IT"
+  },
+  "home": {
+    "title": "التحضير للامتحان",
+    "subtitle": "اختر امتحاناً للدراسة",
+    "addExam": "إضافة امتحان جديد",
+    "progress": "{{completed}} من {{total}} مكتمل",
+    "placeholder": "المحتوى قريباً"
+  },
+  "exam": {
+    "parts": "أقسام الامتحان",
+    "topicsCompleted": "{{completed}}/{{total}} مواضيع مكتملة"
+  },
+  "part": {
+    "topics": "المواضيع",
+    "topicGroups": "مجموعات المواضيع"
+  },
+  "topic": {
+    "definition": "التعريف",
+    "keyPoints": "النقاط المهمة",
+    "examples": "أمثلة",
+    "examRelevance": "أهمية الامتحان",
+    "summary": "الملخص",
+    "markComplete": "وضع علامة مكتمل",
+    "markIncomplete": "وضع علامة غير مكتمل",
+    "completed": "مكتمل",
+    "notCompleted": "مفتوح"
+  },
+  "search": {
+    "placeholder": "البحث عن مواضيع...",
+    "noResults": "لم يتم العثور على نتائج",
+    "results": "{{count}} نتائج"
+  },
+  "modal": {
+    "addExam": "إضافة امتحان",
+    "examNameDe": "الاسم (ألماني)",
+    "examNameAr": "الاسم (عربي)",
+    "examDescDe": "الوصف (ألماني)",
+    "examDescAr": "الوصف (عربي)",
+    "examIcon": "أيقونة (إيموجي)",
+    "cancel": "إلغاء",
+    "create": "إنشاء"
+  },
+  "common": {
+    "back": "رجوع",
+    "home": "الرئيسية",
+    "completed": "مكتمل",
+    "notCompleted": "مفتوح",
+    "loading": "جار التحميل...",
+    "notFound": "الصفحة غير موجودة",
+    "notFoundDesc": "الصفحة التي تبحث عنها غير موجودة.",
+    "goHome": "العودة للرئيسية"
+  },
+  "lang": {
+    "toggle": "Deutsch"
+  }
+}
