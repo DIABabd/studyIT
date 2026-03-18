@@ -2997,4 +2997,852 @@ export const part2Questions: QuizQuestion[] = [
     },
     tags: ['2d-array', 'durchlauf'],
   },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group13 – Error handling (+5)
+  // ============================================================
+  {
+    id: 'p2-121',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group13',
+    topic: 'error-handling-logic',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\ntry {\n  int[] arr = {1, 2, 3};\n  int x = arr[5];\n  print("OK");\n} catch (ArrayIndexOutOfBoundsException e) {\n  print("Fehler");\n} finally {\n  print("Ende");\n}',
+      ar: 'ماذا يطبع الكود التالي؟\n\ntry {\n  int[] arr = {1, 2, 3};\n  int x = arr[5];\n  print("OK");\n} catch (ArrayIndexOutOfBoundsException e) {\n  print("Fehler");\n} finally {\n  print("Ende");\n}',
+    },
+    options: [
+      { de: 'OK Ende', ar: 'OK Ende' },
+      { de: 'Fehler Ende', ar: 'Fehler Ende' },
+      { de: 'Fehler', ar: 'Fehler' },
+      { de: 'Ende', ar: 'Ende' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'arr[5] löst eine ArrayIndexOutOfBoundsException aus, da das Array nur 3 Elemente hat (Index 0-2). Der catch-Block gibt "Fehler" aus, der finally-Block wird immer ausgeführt und gibt "Ende" aus.',
+      ar: 'arr[5] يطلق ArrayIndexOutOfBoundsException لأن المصفوفة تحتوي على 3 عناصر فقط (فهرس 0-2). كتلة catch تطبع "Fehler"، وكتلة finally تُنفذ دائمًا وتطبع "Ende".',
+    },
+  },
+  {
+    id: 'p2-122',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group13',
+    topic: 'input-validation',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Eine Methode empfängt einen String als E-Mail-Adresse. Welche Validierungsprüfung ist am wichtigsten?',
+      ar: 'تستقبل طريقة سلسلة نصية كعنوان بريد إلكتروني. أي فحص تحقق هو الأهم؟',
+    },
+    options: [
+      { de: 'Prüfen, ob der String ein @-Zeichen und einen Punkt enthält', ar: 'التحقق من احتواء النص على علامة @ ونقطة' },
+      { de: 'Prüfen, ob der String genau 10 Zeichen lang ist', ar: 'التحقق من أن النص يتكون من 10 أحرف بالضبط' },
+      { de: 'Prüfen, ob der String nur Großbuchstaben enthält', ar: 'التحقق من أن النص يحتوي على أحرف كبيرة فقط' },
+      { de: 'Prüfen, ob der String eine Zahl ist', ar: 'التحقق مما إذا كان النص رقمًا' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Eine gültige E-Mail-Adresse muss mindestens ein @-Zeichen und einen Punkt in der Domain enthalten (z.B. user@example.com). Die anderen Prüfungen sind für E-Mail-Adressen nicht sinnvoll.',
+      ar: 'عنوان البريد الإلكتروني الصالح يجب أن يحتوي على الأقل على علامة @ ونقطة في النطاق (مثل user@example.com). الفحوصات الأخرى غير مناسبة لعناوين البريد الإلكتروني.',
+    },
+  },
+  {
+    id: 'p2-123',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group13',
+    topic: 'boundary-conditions',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] werte = {10, 20, 30};\nfor (int i = 0; i <= werte.length; i++) {\n  try {\n    print(werte[i] + " ");\n  } catch (Exception e) {\n    print("X ");\n  }\n}',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] werte = {10, 20, 30};\nfor (int i = 0; i <= werte.length; i++) {\n  try {\n    print(werte[i] + " ");\n  } catch (Exception e) {\n    print("X ");\n  }\n}',
+    },
+    options: [
+      { de: '10 20 30', ar: '10 20 30' },
+      { de: '10 20 30 X', ar: '10 20 30 X' },
+      { de: '10 20 30 0', ar: '10 20 30 0' },
+      { de: 'X X X X', ar: 'X X X X' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Die Schleife läuft von 0 bis 3 (i <= werte.length, also i <= 3). Für i=0,1,2 werden 10, 20, 30 ausgegeben. Bei i=3 tritt eine ArrayIndexOutOfBoundsException auf, die im catch abgefangen wird und "X" ausgibt.',
+      ar: 'الحلقة تعمل من 0 إلى 3 (i <= werte.length أي i <= 3). لـ i=0,1,2 يتم طباعة 10، 20، 30. عند i=3 يحدث ArrayIndexOutOfBoundsException يتم التقاطه في catch ويطبع "X".',
+    },
+  },
+  {
+    id: 'p2-124',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group13',
+    topic: 'null-checks',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welche Zeile verhindert eine NullPointerException korrekt?\n\nString text = getInput(); // kann null zurückgeben',
+      ar: 'أي سطر يمنع NullPointerException بشكل صحيح؟\n\nString text = getInput(); // يمكن أن يعيد null',
+    },
+    options: [
+      { de: 'if (text != null && text.length() > 0)', ar: 'if (text != null && text.length() > 0)' },
+      { de: 'if (text.length() > 0 && text != null)', ar: 'if (text.length() > 0 && text != null)' },
+      { de: 'if (text.equals(null))', ar: 'if (text.equals(null))' },
+      { de: 'if (text.length() != null)', ar: 'if (text.length() != null)' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Durch Short-Circuit-Evaluation wird bei text != null zuerst geprüft, ob text nicht null ist. Nur wenn das wahr ist, wird text.length() aufgerufen. Bei Option B würde text.length() vor der Null-Prüfung aufgerufen.',
+      ar: 'من خلال التقييم المختصر (Short-Circuit) يتم أولاً التحقق من أن text ليس null. فقط إذا كان ذلك صحيحًا يتم استدعاء text.length(). في الخيار B سيتم استدعاء text.length() قبل فحص null.',
+    },
+  },
+  {
+    id: 'p2-125',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group13',
+    topic: 'error-handling-logic',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint ergebnis = 0;\ntry {\n  ergebnis = 10 / 0;\n} catch (ArithmeticException e) {\n  ergebnis = -1;\n} finally {\n  ergebnis += 1;\n}\nprint(ergebnis);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint ergebnis = 0;\ntry {\n  ergebnis = 10 / 0;\n} catch (ArithmeticException e) {\n  ergebnis = -1;\n} finally {\n  ergebnis += 1;\n}\nprint(ergebnis);',
+    },
+    options: [
+      { de: '0', ar: '0' },
+      { de: '-1', ar: '-1' },
+      { de: '1', ar: '1' },
+      { de: 'ArithmeticException', ar: 'ArithmeticException' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: '10/0 löst eine ArithmeticException aus. Im catch wird ergebnis = -1 gesetzt. Der finally-Block wird immer ausgeführt: ergebnis += 1, also -1 + 1 = 0. Ausgabe: 0.',
+      ar: '10/0 يطلق ArithmeticException. في catch يتم تعيين ergebnis = -1. كتلة finally تُنفذ دائمًا: ergebnis += 1، أي -1 + 1 = 0. المخرجات: 0.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group14 – API/backend logic (+5)
+  // ============================================================
+  {
+    id: 'p2-126',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group14',
+    topic: 'http-request-handling',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welcher HTTP-Statuscode wird zurückgegeben, wenn eine angeforderte Ressource nicht gefunden wurde?',
+      ar: 'ما هو رمز حالة HTTP الذي يتم إرجاعه عندما لا يتم العثور على المورد المطلوب؟',
+    },
+    options: [
+      { de: '200 OK', ar: '200 OK' },
+      { de: '301 Moved Permanently', ar: '301 Moved Permanently' },
+      { de: '404 Not Found', ar: '404 Not Found' },
+      { de: '500 Internal Server Error', ar: '500 Internal Server Error' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: 'Der Statuscode 404 bedeutet, dass die angeforderte Ressource auf dem Server nicht gefunden wurde. 200 bedeutet Erfolg, 301 eine permanente Weiterleitung und 500 einen internen Serverfehler.',
+      ar: 'رمز الحالة 404 يعني أن المورد المطلوب لم يتم العثور عليه على الخادم. 200 يعني نجاح، 301 إعادة توجيه دائمة، و500 خطأ داخلي في الخادم.',
+    },
+  },
+  {
+    id: 'p2-127',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group14',
+    topic: 'api-endpoints',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welche HTTP-Methode wird nach REST-Konvention verwendet, um eine bestehende Ressource vollständig zu aktualisieren?',
+      ar: 'ما هي طريقة HTTP المستخدمة وفقًا لاتفاقية REST لتحديث مورد موجود بالكامل؟',
+    },
+    options: [
+      { de: 'GET', ar: 'GET' },
+      { de: 'POST', ar: 'POST' },
+      { de: 'PUT', ar: 'PUT' },
+      { de: 'DELETE', ar: 'DELETE' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: 'PUT wird verwendet, um eine bestehende Ressource vollständig zu aktualisieren. GET liest Daten, POST erstellt neue Ressourcen, DELETE löscht Ressourcen.',
+      ar: 'PUT يُستخدم لتحديث مورد موجود بالكامل. GET يقرأ البيانات، POST ينشئ موارد جديدة، DELETE يحذف الموارد.',
+    },
+  },
+  {
+    id: 'p2-128',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group14',
+    topic: 'response-generation',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Ein REST-Endpunkt gibt eine JSON-Antwort zurück. Welcher Content-Type Header ist korrekt?',
+      ar: 'نقطة نهاية REST تُعيد استجابة JSON. ما هو ترويسة Content-Type الصحيحة؟',
+    },
+    options: [
+      { de: 'Content-Type: text/html', ar: 'Content-Type: text/html' },
+      { de: 'Content-Type: application/json', ar: 'Content-Type: application/json' },
+      { de: 'Content-Type: text/plain', ar: 'Content-Type: text/plain' },
+      { de: 'Content-Type: application/xml', ar: 'Content-Type: application/xml' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Für JSON-Antworten muss der Content-Type auf application/json gesetzt werden. text/html ist für HTML-Seiten, text/plain für reinen Text und application/xml für XML-Daten.',
+      ar: 'لاستجابات JSON يجب تعيين Content-Type إلى application/json. text/html لصفحات HTML، text/plain للنص العادي، وapplication/xml لبيانات XML.',
+    },
+  },
+  {
+    id: 'p2-129',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group14',
+    topic: 'data-filtering-backend',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Ein API-Endpunkt /produkte?kategorie=Elektronik&maxPreis=500 wird aufgerufen. Was beschreibt die Funktion der Query-Parameter korrekt?',
+      ar: 'يتم استدعاء نقطة نهاية API /produkte?kategorie=Elektronik&maxPreis=500. ما الذي يصف وظيفة معلمات الاستعلام بشكل صحيح؟',
+    },
+    options: [
+      { de: 'Sie filtern die Ergebnisse nach Kategorie "Elektronik" und maximalem Preis 500', ar: 'تقوم بتصفية النتائج حسب الفئة "Elektronik" والسعر الأقصى 500' },
+      { de: 'Sie erstellen ein neues Produkt mit diesen Werten', ar: 'تقوم بإنشاء منتج جديد بهذه القيم' },
+      { de: 'Sie löschen Produkte mit diesen Eigenschaften', ar: 'تقوم بحذف المنتجات بهذه الخصائص' },
+      { de: 'Sie ändern den Servernamen', ar: 'تقوم بتغيير اسم الخادم' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Query-Parameter in einer GET-Anfrage werden zur Filterung von Ergebnissen verwendet. kategorie=Elektronik filtert nach der Kategorie und maxPreis=500 begrenzt den maximalen Preis.',
+      ar: 'معلمات الاستعلام في طلب GET تُستخدم لتصفية النتائج. kategorie=Elektronik تُصفي حسب الفئة وmaxPreis=500 تحدد السعر الأقصى.',
+    },
+  },
+  {
+    id: 'p2-130',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group14',
+    topic: 'http-request-handling',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Ein Server verarbeitet folgende Anfrage:\n\nPOST /api/bestellungen\nBody: {"kundeId": 42, "produkt": "Laptop", "menge": 1}\n\nWelcher Statuscode sollte bei erfolgreicher Erstellung zurückgegeben werden?',
+      ar: 'يعالج خادم الطلب التالي:\n\nPOST /api/bestellungen\nBody: {"kundeId": 42, "produkt": "Laptop", "menge": 1}\n\nما رمز الحالة الذي يجب إرجاعه عند الإنشاء الناجح؟',
+    },
+    options: [
+      { de: '200 OK', ar: '200 OK' },
+      { de: '201 Created', ar: '201 Created' },
+      { de: '204 No Content', ar: '204 No Content' },
+      { de: '301 Moved Permanently', ar: '301 Moved Permanently' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: '201 Created ist der korrekte Statuscode, wenn eine neue Ressource erfolgreich erstellt wurde. 200 OK ist für allgemeine erfolgreiche Anfragen, 204 für Anfragen ohne Antwortinhalt.',
+      ar: '201 Created هو رمز الحالة الصحيح عند إنشاء مورد جديد بنجاح. 200 OK للطلبات الناجحة العامة، 204 للطلبات بدون محتوى استجابة.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group15 – Mathematical logic (+5)
+  // ============================================================
+  {
+    id: 'p2-131',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group15',
+    topic: 'counters-statistics',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] noten = {1, 3, 2, 5, 1, 4, 2, 1};\nint zaehler = 0;\nfor (int note : noten) {\n  if (note <= 2) zaehler++;\n}\nprint(zaehler);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] noten = {1, 3, 2, 5, 1, 4, 2, 1};\nint zaehler = 0;\nfor (int note : noten) {\n  if (note <= 2) zaehler++;\n}\nprint(zaehler);',
+    },
+    options: [
+      { de: '3', ar: '3' },
+      { de: '4', ar: '4' },
+      { de: '5', ar: '5' },
+      { de: '8', ar: '8' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: 'Noten <= 2 sind: 1, 2, 1, 2, 1 = 5 Noten. Der Zähler wird also 5-mal erhöht.',
+      ar: 'الدرجات <= 2 هي: 1، 2، 1، 2، 1 = 5 درجات. لذلك يتم زيادة العداد 5 مرات.',
+    },
+  },
+  {
+    id: 'p2-132',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group15',
+    topic: 'percentage-calculations',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'In einem Unternehmen arbeiten 80 Mitarbeiter. 60 davon haben die Schulung bestanden. Welche Berechnung ergibt die Bestehensquote in Prozent?',
+      ar: 'في شركة يعمل 80 موظفًا. 60 منهم اجتازوا التدريب. أي حساب يعطي نسبة النجاح بالمئة؟',
+    },
+    options: [
+      { de: '(60.0 / 80) * 100 = 75.0%', ar: '(60.0 / 80) * 100 = 75.0%' },
+      { de: '(80 / 60) * 100 = 133.3%', ar: '(80 / 60) * 100 = 133.3%' },
+      { de: '60 - 80 = -20%', ar: '60 - 80 = -20%' },
+      { de: '60 * 80 / 100 = 48%', ar: '60 * 80 / 100 = 48%' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Die Prozentberechnung lautet: (Anteil / Gesamt) * 100. Also (60 / 80) * 100 = 75%. Wichtig: 60.0 statt 60 verwenden, um Ganzzahldivision zu vermeiden.',
+      ar: 'حساب النسبة المئوية: (الجزء / الكل) * 100. أي (60 / 80) * 100 = 75%. مهم: استخدام 60.0 بدلاً من 60 لتجنب القسمة الصحيحة.',
+    },
+  },
+  {
+    id: 'p2-133',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group15',
+    topic: 'difference-calculations',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] umsatz = {1200, 1500, 1100, 1800};\nint maxDiff = 0;\nfor (int i = 1; i < umsatz.length; i++) {\n  int diff = Math.abs(umsatz[i] - umsatz[i-1]);\n  if (diff > maxDiff) maxDiff = diff;\n}\nprint(maxDiff);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] umsatz = {1200, 1500, 1100, 1800};\nint maxDiff = 0;\nfor (int i = 1; i < umsatz.length; i++) {\n  int diff = Math.abs(umsatz[i] - umsatz[i-1]);\n  if (diff > maxDiff) maxDiff = diff;\n}\nprint(maxDiff);',
+    },
+    options: [
+      { de: '300', ar: '300' },
+      { de: '400', ar: '400' },
+      { de: '700', ar: '700' },
+      { de: '600', ar: '600' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: 'Differenzen: |1500-1200|=300, |1100-1500|=400, |1800-1100|=700. Die maximale Differenz ist 700.',
+      ar: 'الفروقات: |1500-1200|=300، |1100-1500|=400، |1800-1100|=700. أقصى فرق هو 700.',
+    },
+  },
+  {
+    id: 'p2-134',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group15',
+    topic: 'time-calculations-math',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Ein Mitarbeiter beginnt um 8:45 Uhr und endet um 17:15 Uhr mit 45 Minuten Pause. Wie berechnet man die Nettoarbeitszeit in Minuten?',
+      ar: 'يبدأ موظف الساعة 8:45 وينتهي الساعة 17:15 مع استراحة 45 دقيقة. كيف يتم حساب وقت العمل الصافي بالدقائق؟',
+    },
+    options: [
+      { de: '(17*60+15) - (8*60+45) - 45 = 465 Minuten', ar: '(17*60+15) - (8*60+45) - 45 = 465 دقيقة' },
+      { de: '(17-8) * 60 = 540 Minuten', ar: '(17-8) * 60 = 540 دقيقة' },
+      { de: '(17*60+15) - (8*60+45) = 510 Minuten', ar: '(17*60+15) - (8*60+45) = 510 دقيقة' },
+      { de: '8 * 60 = 480 Minuten', ar: '8 * 60 = 480 دقيقة' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Endzeit in Minuten: 17*60+15=1035. Startzeit: 8*60+45=525. Bruttoarbeitszeit: 1035-525=510. Abzüglich 45 Min Pause: 510-45=465 Minuten = 7 Stunden 45 Minuten.',
+      ar: 'وقت النهاية بالدقائق: 17*60+15=1035. وقت البدء: 8*60+45=525. وقت العمل الإجمالي: 1035-525=510. مطروح منها 45 دقيقة استراحة: 510-45=465 دقيقة = 7 ساعات و45 دقيقة.',
+    },
+  },
+  {
+    id: 'p2-135',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group15',
+    topic: 'percentage-calculations',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint brutto = 119;\ndouble mwst = 19.0;\ndouble netto = brutto / (1 + mwst / 100);\nprint(Math.round(netto));',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint brutto = 119;\ndouble mwst = 19.0;\ndouble netto = brutto / (1 + mwst / 100);\nprint(Math.round(netto));',
+    },
+    options: [
+      { de: '100', ar: '100' },
+      { de: '96', ar: '96' },
+      { de: '119', ar: '119' },
+      { de: '81', ar: '81' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'netto = 119 / (1 + 19/100) = 119 / 1.19 = 100.0. Math.round(100.0) = 100. Die Formel berechnet den Nettobetrag aus dem Bruttobetrag.',
+      ar: 'netto = 119 / (1 + 19/100) = 119 / 1.19 = 100.0. Math.round(100.0) = 100. الصيغة تحسب المبلغ الصافي من المبلغ الإجمالي.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group06 – Searching algorithms (+4)
+  // ============================================================
+  {
+    id: 'p2-136',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group06',
+    topic: 'binary-search',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Ein sortiertes Array hat 1000 Elemente. Wie viele Vergleiche benötigt die binäre Suche im schlimmsten Fall?',
+      ar: 'مصفوفة مرتبة تحتوي على 1000 عنصر. كم مقارنة يحتاجها البحث الثنائي في أسوأ حالة؟',
+    },
+    options: [
+      { de: '1000', ar: '1000' },
+      { de: '500', ar: '500' },
+      { de: '10', ar: '10' },
+      { de: '100', ar: '100' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: 'Die binäre Suche hat eine Komplexität von O(log₂ n). log₂(1000) ≈ 9.97, aufgerundet 10 Vergleiche im schlimmsten Fall.',
+      ar: 'البحث الثنائي له تعقيد O(log₂ n). log₂(1000) ≈ 9.97، مقربًا لأعلى 10 مقارنات في أسوأ حالة.',
+    },
+  },
+  {
+    id: 'p2-137',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group06',
+    topic: 'linear-search',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] daten = {4, 7, 2, 9, 1, 5};\nint gesucht = 9;\nint pos = -1;\nfor (int i = 0; i < daten.length; i++) {\n  if (daten[i] == gesucht) {\n    pos = i;\n    break;\n  }\n}\nprint(pos);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] daten = {4, 7, 2, 9, 1, 5};\nint gesucht = 9;\nint pos = -1;\nfor (int i = 0; i < daten.length; i++) {\n  if (daten[i] == gesucht) {\n    pos = i;\n    break;\n  }\n}\nprint(pos);',
+    },
+    options: [
+      { de: '9', ar: '9' },
+      { de: '3', ar: '3' },
+      { de: '4', ar: '4' },
+      { de: '-1', ar: '-1' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Die lineare Suche durchläuft das Array von links nach rechts. Der Wert 9 befindet sich an Index 3 (daten[3] = 9). Die Position 3 wird ausgegeben.',
+      ar: 'البحث الخطي يمر على المصفوفة من اليسار لليمين. القيمة 9 موجودة في الفهرس 3 (daten[3] = 9). يتم طباعة الموقع 3.',
+    },
+  },
+  {
+    id: 'p2-138',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group06',
+    topic: 'finding-min-max',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] werte = {34, 12, 45, 7, 23};\nint min = werte[0];\nint minIdx = 0;\nfor (int i = 1; i < werte.length; i++) {\n  if (werte[i] < min) {\n    min = werte[i];\n    minIdx = i;\n  }\n}\nprint(min + " an Position " + minIdx);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] werte = {34, 12, 45, 7, 23};\nint min = werte[0];\nint minIdx = 0;\nfor (int i = 1; i < werte.length; i++) {\n  if (werte[i] < min) {\n    min = werte[i];\n    minIdx = i;\n  }\n}\nprint(min + " an Position " + minIdx);',
+    },
+    options: [
+      { de: '12 an Position 1', ar: '12 an Position 1' },
+      { de: '7 an Position 3', ar: '7 an Position 3' },
+      { de: '34 an Position 0', ar: '34 an Position 0' },
+      { de: '7 an Position 4', ar: '7 an Position 4' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Der Algorithmus sucht das Minimum: Start min=34. i=1: 12<34 → min=12, minIdx=1. i=2: 45>12. i=3: 7<12 → min=7, minIdx=3. i=4: 23>7. Ergebnis: 7 an Position 3.',
+      ar: 'الخوارزمية تبحث عن الحد الأدنى: بداية min=34. i=1: 12<34 → min=12, minIdx=1. i=2: 45>12. i=3: 7<12 → min=7, minIdx=3. i=4: 23>7. النتيجة: 7 في الموقع 3.',
+    },
+  },
+  {
+    id: 'p2-139',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group06',
+    topic: 'counting-matching',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nString[] namen = {"Müller", "Schmidt", "Müller", "Weber", "Müller", "Schmidt"};\nString gesucht = "Müller";\nint anzahl = 0;\nfor (String name : namen) {\n  if (name.equals(gesucht)) anzahl++;\n}\nprint(anzahl);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nString[] namen = {"Müller", "Schmidt", "Müller", "Weber", "Müller", "Schmidt"};\nString gesucht = "Müller";\nint anzahl = 0;\nfor (String name : namen) {\n  if (name.equals(gesucht)) anzahl++;\n}\nprint(anzahl);',
+    },
+    options: [
+      { de: '1', ar: '1' },
+      { de: '2', ar: '2' },
+      { de: '3', ar: '3' },
+      { de: '6', ar: '6' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: '"Müller" kommt an den Positionen 0, 2 und 4 vor, also insgesamt 3 Mal.',
+      ar: '"Müller" يظهر في المواقع 0 و2 و4، أي 3 مرات إجمالاً.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group07 – Algorithm design (+4)
+  // ============================================================
+  {
+    id: 'p2-140',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group07',
+    topic: 'pseudocode',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welchen Wert hat ergebnis nach Ausführung des folgenden Pseudocodes?\n\nergebnis = 1\nFÜR i = 1 BIS 5\n  ergebnis = ergebnis * i\nENDE FÜR',
+      ar: 'ما قيمة ergebnis بعد تنفيذ الكود الوهمي التالي؟\n\nergebnis = 1\nFÜR i = 1 BIS 5\n  ergebnis = ergebnis * i\nENDE FÜR',
+    },
+    options: [
+      { de: '15', ar: '15' },
+      { de: '120', ar: '120' },
+      { de: '25', ar: '25' },
+      { de: '5', ar: '5' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Der Code berechnet die Fakultät von 5: 1*1=1, 1*2=2, 2*3=6, 6*4=24, 24*5=120. Ergebnis: 5! = 120.',
+      ar: 'الكود يحسب مضروب 5: 1*1=1، 1*2=2، 2*3=6، 6*4=24، 24*5=120. النتيجة: !5 = 120.',
+    },
+  },
+  {
+    id: 'p2-141',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group07',
+    topic: 'algorithm-complexity',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welche Zeitkomplexität hat folgender Code?\n\nfor (int i = 0; i < n; i++) {\n  for (int j = 0; j < n; j++) {\n    print(i + j);\n  }\n}',
+      ar: 'ما هو التعقيد الزمني للكود التالي؟\n\nfor (int i = 0; i < n; i++) {\n  for (int j = 0; j < n; j++) {\n    print(i + j);\n  }\n}',
+    },
+    options: [
+      { de: 'O(n)', ar: 'O(n)' },
+      { de: 'O(n²)', ar: 'O(n²)' },
+      { de: 'O(log n)', ar: 'O(log n)' },
+      { de: 'O(n log n)', ar: 'O(n log n)' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Zwei verschachtelte Schleifen, die jeweils n-mal laufen, ergeben n * n = n² Operationen. Die Zeitkomplexität ist daher O(n²).',
+      ar: 'حلقتان متداخلتان كل منهما تعمل n مرة تعطي n * n = n² عملية. لذلك التعقيد الزمني هو O(n²).',
+    },
+  },
+  {
+    id: 'p2-142',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group07',
+    topic: 'stepwise-refinement',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Beim Prinzip der schrittweisen Verfeinerung wird ein Problem in Teilprobleme zerlegt. Welcher Vorteil ergibt sich daraus?',
+      ar: 'في مبدأ التحسين التدريجي يتم تقسيم المشكلة إلى مشاكل فرعية. ما هي الميزة الناتجة عن ذلك؟',
+    },
+    options: [
+      { de: 'Jedes Teilproblem kann unabhängig gelöst und getestet werden', ar: 'يمكن حل واختبار كل مشكلة فرعية بشكل مستقل' },
+      { de: 'Der Code wird immer schneller ausgeführt', ar: 'يتم تنفيذ الكود دائمًا بشكل أسرع' },
+      { de: 'Es wird weniger Speicher benötigt', ar: 'يتم استخدام ذاكرة أقل' },
+      { de: 'Die Programmiersprache ist egal', ar: 'لغة البرمجة غير مهمة' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Die schrittweise Verfeinerung (Top-Down-Entwurf) zerlegt ein komplexes Problem in kleinere, handhabbare Teilprobleme. Jedes kann einzeln implementiert und getestet werden, was die Wartbarkeit und Fehlersuche verbessert.',
+      ar: 'التحسين التدريجي (التصميم من أعلى لأسفل) يقسم مشكلة معقدة إلى مشاكل فرعية أصغر يمكن التحكم بها. يمكن تنفيذ واختبار كل منها بشكل فردي مما يحسن الصيانة والبحث عن الأخطاء.',
+    },
+  },
+  {
+    id: 'p2-143',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group07',
+    topic: 'algorithm-efficiency',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welcher Suchalgorithmus ist für eine sortierte Liste mit 1.000.000 Einträgen effizienter?',
+      ar: 'أي خوارزمية بحث أكثر كفاءة لقائمة مرتبة تحتوي على 1,000,000 إدخال؟',
+    },
+    options: [
+      { de: 'Lineare Suche – durchschnittlich 500.000 Vergleiche', ar: 'البحث الخطي – متوسط 500,000 مقارنة' },
+      { de: 'Binäre Suche – maximal ca. 20 Vergleiche', ar: 'البحث الثنائي – أقصى حوالي 20 مقارنة' },
+      { de: 'Beide sind gleich schnell', ar: 'كلاهما بنفس السرعة' },
+      { de: 'Lineare Suche ist immer schneller', ar: 'البحث الخطي دائمًا أسرع' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Die binäre Suche hat O(log₂ n) Vergleiche. log₂(1.000.000) ≈ 20. Die lineare Suche benötigt O(n), also durchschnittlich 500.000 Vergleiche. Für sortierte Daten ist binäre Suche deutlich effizienter.',
+      ar: 'البحث الثنائي له O(log₂ n) مقارنات. log₂(1,000,000) ≈ 20. البحث الخطي يحتاج O(n)، أي متوسط 500,000 مقارنة. للبيانات المرتبة البحث الثنائي أكثر كفاءة بكثير.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group10 – DB manipulation (+4)
+  // ============================================================
+  {
+    id: 'p2-144',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group10',
+    topic: 'insert',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welches SQL-Statement fügt einen neuen Mitarbeiter korrekt in die Tabelle "mitarbeiter" ein?',
+      ar: 'أي عبارة SQL تُدرج موظفًا جديدًا بشكل صحيح في جدول "mitarbeiter"؟',
+    },
+    options: [
+      { de: 'INSERT INTO mitarbeiter (name, gehalt) VALUES (\'Müller\', 3500);', ar: 'INSERT INTO mitarbeiter (name, gehalt) VALUES (\'Müller\', 3500);' },
+      { de: 'INSERT mitarbeiter SET name = \'Müller\', gehalt = 3500;', ar: 'INSERT mitarbeiter SET name = \'Müller\', gehalt = 3500;' },
+      { de: 'ADD INTO mitarbeiter (name, gehalt) VALUES (\'Müller\', 3500);', ar: 'ADD INTO mitarbeiter (name, gehalt) VALUES (\'Müller\', 3500);' },
+      { de: 'INSERT VALUES (\'Müller\', 3500) INTO mitarbeiter;', ar: 'INSERT VALUES (\'Müller\', 3500) INTO mitarbeiter;' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Die korrekte SQL-Syntax ist: INSERT INTO tabelle (spalten) VALUES (werte). Die Spalten und Werte müssen in der gleichen Reihenfolge stehen.',
+      ar: 'الصيغة الصحيحة لـ SQL هي: INSERT INTO tabelle (spalten) VALUES (werte). يجب أن تكون الأعمدة والقيم بنفس الترتيب.',
+    },
+  },
+  {
+    id: 'p2-145',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group10',
+    topic: 'update-sql',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welches SQL-Statement erhöht das Gehalt aller Mitarbeiter in der Abteilung "IT" um 10%?',
+      ar: 'أي عبارة SQL تزيد راتب جميع الموظفين في قسم "IT" بنسبة 10%؟',
+    },
+    options: [
+      { de: 'UPDATE mitarbeiter SET gehalt = gehalt * 1.10 WHERE abteilung = \'IT\';', ar: 'UPDATE mitarbeiter SET gehalt = gehalt * 1.10 WHERE abteilung = \'IT\';' },
+      { de: 'MODIFY mitarbeiter SET gehalt + 10% WHERE abteilung = \'IT\';', ar: 'MODIFY mitarbeiter SET gehalt + 10% WHERE abteilung = \'IT\';' },
+      { de: 'UPDATE mitarbeiter SET gehalt = gehalt + 10;', ar: 'UPDATE mitarbeiter SET gehalt = gehalt + 10;' },
+      { de: 'ALTER mitarbeiter SET gehalt = gehalt * 1.10 WHERE abteilung = \'IT\';', ar: 'ALTER mitarbeiter SET gehalt = gehalt * 1.10 WHERE abteilung = \'IT\';' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'UPDATE mit SET und WHERE ist die korrekte Syntax. gehalt * 1.10 erhöht den Wert um 10%. Die WHERE-Klausel begrenzt die Änderung auf die IT-Abteilung.',
+      ar: 'UPDATE مع SET وWHERE هي الصيغة الصحيحة. gehalt * 1.10 يزيد القيمة بنسبة 10%. شرط WHERE يحد التغيير على قسم IT.',
+    },
+  },
+  {
+    id: 'p2-146',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group10',
+    topic: 'delete-sql',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was bewirkt folgendes SQL-Statement?\n\nDELETE FROM bestellungen WHERE bestelldatum < \'2024-01-01\';',
+      ar: 'ماذا تفعل عبارة SQL التالية؟\n\nDELETE FROM bestellungen WHERE bestelldatum < \'2024-01-01\';',
+    },
+    options: [
+      { de: 'Löscht alle Bestellungen vor dem 1. Januar 2024', ar: 'تحذف جميع الطلبات قبل 1 يناير 2024' },
+      { de: 'Löscht die Tabelle bestellungen komplett', ar: 'تحذف جدول bestellungen بالكامل' },
+      { de: 'Löscht alle Bestellungen nach dem 1. Januar 2024', ar: 'تحذف جميع الطلبات بعد 1 يناير 2024' },
+      { de: 'Löscht nur die erste Bestellung vor 2024', ar: 'تحذف فقط أول طلب قبل 2024' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'DELETE FROM mit WHERE löscht alle Zeilen, die die Bedingung erfüllen. Hier werden alle Bestellungen gelöscht, deren bestelldatum vor dem 01.01.2024 liegt.',
+      ar: 'DELETE FROM مع WHERE يحذف جميع الصفوف التي تستوفي الشرط. هنا يتم حذف جميع الطلبات التي تاريخها قبل 01.01.2024.',
+    },
+  },
+  {
+    id: 'p2-147',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group10',
+    topic: 'alter-table',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Welches SQL-Statement fügt der Tabelle "kunden" eine neue Spalte "email" vom Typ VARCHAR(100) hinzu?',
+      ar: 'أي عبارة SQL تضيف عمودًا جديدًا "email" من نوع VARCHAR(100) إلى جدول "kunden"؟',
+    },
+    options: [
+      { de: 'ALTER TABLE kunden ADD email VARCHAR(100);', ar: 'ALTER TABLE kunden ADD email VARCHAR(100);' },
+      { de: 'MODIFY TABLE kunden ADD COLUMN email VARCHAR(100);', ar: 'MODIFY TABLE kunden ADD COLUMN email VARCHAR(100);' },
+      { de: 'UPDATE TABLE kunden ADD email VARCHAR(100);', ar: 'UPDATE TABLE kunden ADD email VARCHAR(100);' },
+      { de: 'INSERT COLUMN email VARCHAR(100) INTO kunden;', ar: 'INSERT COLUMN email VARCHAR(100) INTO kunden;' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'ALTER TABLE tabellenname ADD spaltenname datentyp; ist die korrekte SQL-Syntax, um eine neue Spalte zu einer bestehenden Tabelle hinzuzufügen.',
+      ar: 'ALTER TABLE tabellenname ADD spaltenname datentyp; هي الصيغة الصحيحة لـ SQL لإضافة عمود جديد إلى جدول موجود.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group11 – Data processing (+4)
+  // ============================================================
+  {
+    id: 'p2-148',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group11',
+    topic: 'aggregating-values',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] verkaeufe = {150, 200, 180, 220, 170};\nint summe = 0;\nfor (int v : verkaeufe) {\n  summe += v;\n}\nprint("Gesamt: " + summe);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] verkaeufe = {150, 200, 180, 220, 170};\nint summe = 0;\nfor (int v : verkaeufe) {\n  summe += v;\n}\nprint("Gesamt: " + summe);',
+    },
+    options: [
+      { de: 'Gesamt: 900', ar: 'Gesamt: 900' },
+      { de: 'Gesamt: 920', ar: 'Gesamt: 920' },
+      { de: 'Gesamt: 820', ar: 'Gesamt: 820' },
+      { de: 'Gesamt: 1000', ar: 'Gesamt: 1000' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: '150 + 200 + 180 + 220 + 170 = 920. Die for-each-Schleife addiert alle Werte zum Ergebnis.',
+      ar: '150 + 200 + 180 + 220 + 170 = 920. حلقة for-each تجمع كل القيم.',
+    },
+  },
+  {
+    id: 'p2-149',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group11',
+    topic: 'calculating-averages',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\ndouble[] temperaturen = {18.5, 22.0, 19.5, 24.0, 21.0};\ndouble summe = 0;\nfor (double t : temperaturen) summe += t;\ndouble durchschnitt = summe / temperaturen.length;\nprint(durchschnitt);',
+      ar: 'ماذا يطبع الكود التالي؟\n\ndouble[] temperaturen = {18.5, 22.0, 19.5, 24.0, 21.0};\ndouble summe = 0;\nfor (double t : temperaturen) summe += t;\ndouble durchschnitt = summe / temperaturen.length;\nprint(durchschnitt);',
+    },
+    options: [
+      { de: '21.0', ar: '21.0' },
+      { de: '20.0', ar: '20.0' },
+      { de: '22.5', ar: '22.5' },
+      { de: '105.0', ar: '105.0' },
+    ],
+    correctAnswers: [0],
+    explanation: {
+      de: 'Summe: 18.5 + 22.0 + 19.5 + 24.0 + 21.0 = 105.0. Durchschnitt: 105.0 / 5 = 21.0.',
+      ar: 'المجموع: 18.5 + 22.0 + 19.5 + 24.0 + 21.0 = 105.0. المتوسط: 105.0 / 5 = 21.0.',
+    },
+  },
+  {
+    id: 'p2-150',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group11',
+    topic: 'filtering-datasets',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] preise = {45, 120, 89, 210, 55, 340, 78};\nint anzahl = 0;\nfor (int p : preise) {\n  if (p >= 100) anzahl++;\n}\nprint(anzahl + " Produkte über 100 Euro");',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] preise = {45, 120, 89, 210, 55, 340, 78};\nint anzahl = 0;\nfor (int p : preise) {\n  if (p >= 100) anzahl++;\n}\nprint(anzahl + " Produkte über 100 Euro");',
+    },
+    options: [
+      { de: '2 Produkte über 100 Euro', ar: '2 Produkte über 100 Euro' },
+      { de: '3 Produkte über 100 Euro', ar: '3 Produkte über 100 Euro' },
+      { de: '4 Produkte über 100 Euro', ar: '4 Produkte über 100 Euro' },
+      { de: '5 Produkte über 100 Euro', ar: '5 Produkte über 100 Euro' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Preise >= 100: 120, 210, 340 = 3 Produkte. 45, 89, 55 und 78 sind unter 100.',
+      ar: 'الأسعار >= 100: 120، 210، 340 = 3 منتجات. 45، 89، 55 و78 أقل من 100.',
+    },
+  },
+  {
+    id: 'p2-151',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group11',
+    topic: 'calculating-differences',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint[] monatsumsatz = {5000, 5500, 4800, 6200};\nint wachstum = 0;\nint rueckgang = 0;\nfor (int i = 1; i < monatsumsatz.length; i++) {\n  if (monatsumsatz[i] > monatsumsatz[i-1]) wachstum++;\n  else rueckgang++;\n}\nprint("Wachstum: " + wachstum + ", Rückgang: " + rueckgang);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint[] monatsumsatz = {5000, 5500, 4800, 6200};\nint wachstum = 0;\nint rueckgang = 0;\nfor (int i = 1; i < monatsumsatz.length; i++) {\n  if (monatsumsatz[i] > monatsumsatz[i-1]) wachstum++;\n  else rueckgang++;\n}\nprint("Wachstum: " + wachstum + ", Rückgang: " + rueckgang);',
+    },
+    options: [
+      { de: 'Wachstum: 3, Rückgang: 0', ar: 'Wachstum: 3, Rückgang: 0' },
+      { de: 'Wachstum: 2, Rückgang: 1', ar: 'Wachstum: 2, Rückgang: 1' },
+      { de: 'Wachstum: 1, Rückgang: 2', ar: 'Wachstum: 1, Rückgang: 2' },
+      { de: 'Wachstum: 1, Rückgang: 1', ar: 'Wachstum: 1, Rückgang: 1' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Vergleiche: 5500>5000 → Wachstum(1). 4800<5500 → Rückgang(1). 6200>4800 → Wachstum(2). Ergebnis: Wachstum: 2, Rückgang: 1.',
+      ar: 'المقارنات: 5500>5000 → نمو(1). 4800<5500 → تراجع(1). 6200>4800 → نمو(2). النتيجة: Wachstum: 2, Rückgang: 1.',
+    },
+  },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS: group03 – Functions and methods (+3)
+  // ============================================================
+  {
+    id: 'p2-152',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group03',
+    topic: 'recursion',
+    difficulty: 'hard',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint fib(int n) {\n  if (n <= 1) return n;\n  return fib(n-1) + fib(n-2);\n}\nprint(fib(6));',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint fib(int n) {\n  if (n <= 1) return n;\n  return fib(n-1) + fib(n-2);\n}\nprint(fib(6));',
+    },
+    options: [
+      { de: '5', ar: '5' },
+      { de: '8', ar: '8' },
+      { de: '13', ar: '13' },
+      { de: '6', ar: '6' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Fibonacci-Folge: fib(0)=0, fib(1)=1, fib(2)=1, fib(3)=2, fib(4)=3, fib(5)=5, fib(6)=8. Die Funktion berechnet rekursiv die 6. Fibonacci-Zahl.',
+      ar: 'سلسلة فيبوناتشي: fib(0)=0، fib(1)=1، fib(2)=1، fib(3)=2، fib(4)=3، fib(5)=5، fib(6)=8. الدالة تحسب بشكل تكراري رقم فيبوناتشي السادس.',
+    },
+  },
+  {
+    id: 'p2-153',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group03',
+    topic: 'parameters',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nvoid verdopple(int x) {\n  x = x * 2;\n}\n\nint zahl = 5;\nverdopple(zahl);\nprint(zahl);',
+      ar: 'ماذا يطبع الكود التالي؟\n\nvoid verdopple(int x) {\n  x = x * 2;\n}\n\nint zahl = 5;\nverdopple(zahl);\nprint(zahl);',
+    },
+    options: [
+      { de: '10', ar: '10' },
+      { de: '5', ar: '5' },
+      { de: '0', ar: '0' },
+      { de: 'Kompilierungsfehler', ar: 'خطأ في الترجمة' },
+    ],
+    correctAnswers: [1],
+    explanation: {
+      de: 'Primitive Datentypen wie int werden in Java als Kopie übergeben (Call by Value). Die Änderung innerhalb der Methode hat keinen Einfluss auf die ursprüngliche Variable. zahl bleibt 5.',
+      ar: 'أنواع البيانات الأولية مثل int يتم تمريرها كنسخة في Java (تمرير بالقيمة). التغيير داخل الطريقة لا يؤثر على المتغير الأصلي. zahl تبقى 5.',
+    },
+  },
+  {
+    id: 'p2-154',
+    exam: 'ap2',
+    part: 'part2',
+    topicGroup: 'group03',
+    topic: 'return-values',
+    difficulty: 'medium',
+    type: 'multiple-choice',
+    question: {
+      de: 'Was gibt folgender Code aus?\n\nint max(int a, int b, int c) {\n  if (a >= b && a >= c) return a;\n  if (b >= a && b >= c) return b;\n  return c;\n}\nprint(max(7, 12, 9));',
+      ar: 'ماذا يطبع الكود التالي؟\n\nint max(int a, int b, int c) {\n  if (a >= b && a >= c) return a;\n  if (b >= a && b >= c) return b;\n  return c;\n}\nprint(max(7, 12, 9));',
+    },
+    options: [
+      { de: '7', ar: '7' },
+      { de: '9', ar: '9' },
+      { de: '12', ar: '12' },
+      { de: '28', ar: '28' },
+    ],
+    correctAnswers: [2],
+    explanation: {
+      de: 'Die Funktion vergleicht drei Werte und gibt den größten zurück. a=7: 7>=12 ist falsch. b=12: 12>=7 und 12>=9, beides wahr → return 12.',
+      ar: 'الدالة تقارن ثلاث قيم وتُعيد الأكبر. a=7: 7>=12 خطأ. b=12: 12>=7 و12>=9، كلاهما صحيح → return 12.',
+    },
+  },
 ];
