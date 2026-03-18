@@ -1,7 +1,10 @@
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../hooks/useLanguage';
+import { t as tContent } from '../../utils/content';
 import type { QuizConfig, QuizDifficulty, QuizQuestionType } from '../../data/quiz/types';
 import { QuizModeSelector } from './QuizModeSelector';
 import { allQuizQuestions, getAvailableTopicGroups, getAvailableTopics } from '../../data/quiz';
+import { findExam } from '../../data/exams';
 
 interface QuizFilterPanelProps {
   config: QuizConfig;
@@ -25,8 +28,31 @@ const QUESTION_TYPES: { value: QuizQuestionType; key: string }[] = [
 ];
 const COUNTS = [10, 20, 30, 50, 0];
 
+// Build a lookup map for topic group and topic names from exam data
+function buildNameLookup(lang: string) {
+  const exam = findExam('ap2');
+  if (!exam) return { groupNames: new Map<string, string>(), topicNames: new Map<string, string>() };
+
+  const groupNames = new Map<string, string>();
+  const topicNames = new Map<string, string>();
+
+  for (const part of exam.parts) {
+    for (const group of part.topicGroups) {
+      groupNames.set(group.id, tContent(group.name, lang));
+      for (const topic of group.topics) {
+        topicNames.set(topic.id, tContent(topic.name, lang));
+      }
+    }
+  }
+
+  return { groupNames, topicNames };
+}
+
 export function QuizFilterPanel({ config, onChange, favoriteCount, wrongCount }: QuizFilterPanelProps) {
   const { t } = useTranslation();
+  const { lang } = useLanguage();
+
+  const { groupNames, topicNames } = buildNameLookup(lang);
 
   const topicGroups = getAvailableTopicGroups(allQuizQuestions, config.parts);
   const topics = getAvailableTopics(allQuizQuestions, config.parts, config.topicGroups);
@@ -54,6 +80,16 @@ export function QuizFilterPanel({ config, onChange, favoriteCount, wrongCount }:
       ? config.topics.filter((t) => t !== topicId)
       : [...config.topics, topicId];
     update({ topics: selected });
+  }
+
+  function getGroupLabel(groupId: string, count: number): string {
+    const name = groupNames.get(groupId);
+    return name ? `${name} (${count})` : `${groupId} (${count})`;
+  }
+
+  function getTopicLabel(topicId: string, count: number): string {
+    const name = topicNames.get(topicId);
+    return name ? `${name} (${count})` : `${formatTopicId(topicId)} (${count})`;
   }
 
   return (
@@ -84,7 +120,7 @@ export function QuizFilterPanel({ config, onChange, favoriteCount, wrongCount }:
             {topicGroups.map((group) => (
               <ToggleChip
                 key={`${group.part}-${group.id}`}
-                label={`${group.id} (${group.count})`}
+                label={getGroupLabel(group.id, group.count)}
                 active={config.topicGroups.includes(group.id)}
                 onClick={() => toggleTopicGroup(group.id)}
               />
@@ -115,7 +151,7 @@ export function QuizFilterPanel({ config, onChange, favoriteCount, wrongCount }:
             {topics.map((topic) => (
               <ToggleChip
                 key={`${topic.topicGroup}-${topic.id}`}
-                label={`${formatTopicId(topic.id)} (${topic.count})`}
+                label={getTopicLabel(topic.id, topic.count)}
                 active={config.topics.includes(topic.id)}
                 onClick={() => toggleTopic(topic.id)}
               />
