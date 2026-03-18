@@ -10,6 +10,7 @@ export const softwareTesting: TopicGroup = {
     de: 'Testfälle, Testdaten, Unit-Tests, Testabdeckung und Überdeckungsmaße',
     ar: 'حالات الاختبار، بيانات الاختبار، اختبارات الوحدة، تغطية الاختبار ومقاييس التغطية',
   },
+  priority: 'high',
   topics: [
     {
       id: 'test-cases',

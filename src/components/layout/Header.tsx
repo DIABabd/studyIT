@@ -19,6 +19,14 @@ export function Header() {
           </span>
         </Link>
 
+        <Link
+          to="/quiz"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-primary hover:bg-primary/10 transition-colors flex-shrink-0"
+        >
+          <span>🧠</span>
+          <span className="hidden sm:inline">{t('quiz.title')}</span>
+        </Link>
+
         <div className="flex-1 max-w-sm relative ms-auto">
           <SearchBar value={query} onChange={search} />
           <SearchResults results={results} isOpen={isOpen} onClose={close} />

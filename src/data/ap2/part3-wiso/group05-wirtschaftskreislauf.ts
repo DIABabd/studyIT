@@ -10,6 +10,7 @@ export const wirtschaftskreislauf: TopicGroup = {
     de: 'Der Wirtschaftskreislauf zeigt die Geld- und Güterströme zwischen Haushalten, Unternehmen, Staat und Banken',
     ar: 'تُظهر الدورة الاقتصادية تدفقات الأموال والسلع بين الأسر والشركات والدولة والبنوك',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'haushalte',

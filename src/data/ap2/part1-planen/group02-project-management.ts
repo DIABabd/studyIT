@@ -10,6 +10,7 @@ export const projectManagement: TopicGroup = {
     de: 'Grundlagen des Projektmanagements: Planung, Steuerung und Kontrolle von IT-Projekten',
     ar: 'أساسيات إدارة المشاريع: التخطيط والتوجيه والرقابة على مشاريع تكنولوجيا المعلومات',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'stakeholder',

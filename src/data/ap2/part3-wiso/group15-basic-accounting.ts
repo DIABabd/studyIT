@@ -10,6 +10,7 @@ export const basicAccounting: TopicGroup = {
     de: 'Einnahmen, Ausgaben, Bilanz und Abschreibung als Grundlagen des betrieblichen Rechnungswesens',
     ar: 'الإيرادات والنفقات والميزانية والإهلاك كأساسيات المحاسبة في المنشأة',
   },
+  priority: 'low',
   topics: [
     {
       id: 'einnahmen',

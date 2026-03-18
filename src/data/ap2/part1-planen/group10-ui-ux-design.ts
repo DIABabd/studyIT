@@ -10,6 +10,7 @@ export const uiUxDesign: TopicGroup = {
     de: 'Grundlagen der Benutzeroberflächen- und Benutzererfahrungsgestaltung für Softwareprodukte',
     ar: 'أساسيات تصميم واجهة المستخدم وتجربة المستخدم للمنتجات البرمجية',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'usability-principles',

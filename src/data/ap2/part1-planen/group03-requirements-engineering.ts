@@ -10,6 +10,7 @@ export const requirementsEngineering: TopicGroup = {
     de: 'Systematische Ermittlung, Dokumentation und Verwaltung von Anforderungen an Softwaresysteme',
     ar: 'التحديد والتوثيق والإدارة المنهجية لمتطلبات أنظمة البرمجيات',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'stakeholder-analysis',

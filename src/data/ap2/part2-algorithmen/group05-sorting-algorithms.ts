@@ -10,6 +10,7 @@ export const sortingAlgorithms: TopicGroup = {
     de: 'Bubble Sort, Selection Sort, Insertion Sort und Sortierung von Objekten',
     ar: 'Bubble Sort و Selection Sort و Insertion Sort وترتيب الكائنات',
   },
+  priority: 'high',
   topics: [
     {
       id: 'bubble-sort',

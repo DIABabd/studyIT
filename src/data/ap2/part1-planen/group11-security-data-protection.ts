@@ -10,6 +10,7 @@ export const securityDataProtection: TopicGroup = {
     de: 'IT-Sicherheitsgrundlagen, Authentifizierung, Verschlüsselung und Datenschutz nach DSGVO',
     ar: 'أساسيات أمن تكنولوجيا المعلومات والمصادقة والتشفير وحماية البيانات وفق DSGVO',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'authentication',

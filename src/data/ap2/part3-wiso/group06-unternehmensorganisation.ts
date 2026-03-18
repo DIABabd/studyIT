@@ -10,6 +10,7 @@ export const unternehmensorganisation: TopicGroup = {
     de: 'Aufbau- und Ablauforganisation: Organisationsformen und Strukturen von Unternehmen',
     ar: 'التنظيم الهيكلي والعملي: أشكال التنظيم وهياكل الشركات',
   },
+  priority: 'high',
   topics: [
     {
       id: 'aufbauorganisation',

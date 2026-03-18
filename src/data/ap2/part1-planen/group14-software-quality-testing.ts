@@ -10,6 +10,7 @@ export const softwareQualityTesting: TopicGroup = {
     de: 'Teststufen, Testmethoden und Qualitätssicherung in der Softwareentwicklung',
     ar: 'مستويات الاختبار وأساليب الاختبار وضمان الجودة في تطوير البرمجيات',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'unit-tests',

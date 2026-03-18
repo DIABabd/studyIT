@@ -10,6 +10,7 @@ export const personalwesen: TopicGroup = {
     de: 'Personalwirtschaft: Bewerbung, Arbeitszeugnisse, Fortbildung und Weiterbildung',
     ar: 'إدارة الموارد البشرية: التقديم، شهادات العمل، التدريب المتقدم والتعليم المستمر',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'bewerbung',

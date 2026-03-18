@@ -10,6 +10,7 @@ export const searchingAlgorithms: TopicGroup = {
     de: 'Lineare Suche, binäre Suche, Min/Max-Bestimmung und Zählung',
     ar: 'البحث الخطي، البحث الثنائي، تحديد الحد الأدنى/الأقصى والعد',
   },
+  priority: 'high',
   topics: [
     {
       id: 'linear-search',

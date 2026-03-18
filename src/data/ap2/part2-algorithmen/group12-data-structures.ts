@@ -10,6 +10,7 @@ export const dataStructures: TopicGroup = {
     de: 'Stacks, Queues, Bäume, Graphen und Hash-Tabellen',
     ar: 'المكدسات والطوابير والأشجار والرسوم البيانية وجداول التجزئة',
   },
+  priority: 'low',
   topics: [
     {
       id: 'stacks',

@@ -10,6 +10,7 @@ export const databaseQueries: TopicGroup = {
     de: 'SELECT, WHERE, ORDER BY, JOIN, GROUP BY, HAVING und Aggregatfunktionen',
     ar: 'SELECT و WHERE و ORDER BY و JOIN و GROUP BY و HAVING ودوال التجميع',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'sql-select',

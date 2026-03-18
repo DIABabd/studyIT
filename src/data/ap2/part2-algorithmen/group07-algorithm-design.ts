@@ -10,6 +10,7 @@ export const algorithmDesign: TopicGroup = {
     de: 'Schrittweise Verfeinerung, Flussdiagramme, Pseudocode und Algorithmus-Komplexität',
     ar: 'التحسين التدريجي، المخططات الانسيابية، الشفرة الوهمية وتعقيد الخوارزميات',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'stepwise-refinement',

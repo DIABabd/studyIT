@@ -10,6 +10,7 @@ export const sozialversicherung: TopicGroup = {
     de: 'Die fünf Säulen der Sozialversicherung in Deutschland: Kranken-, Renten-, Arbeitslosen-, Pflege- und Unfallversicherung',
     ar: 'الأعمدة الخمسة للتأمين الاجتماعي في ألمانيا: التأمين الصحي، تأمين التقاعد، تأمين البطالة، تأمين الرعاية وتأمين الحوادث',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'krankenversicherung',

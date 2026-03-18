@@ -10,6 +10,7 @@ export const datenschutzItRecht: TopicGroup = {
     de: 'Datenschutz-Grundverordnung (DSGVO), Datenschutzprinzipien, persönliche Daten und Datensicherheit',
     ar: 'اللائحة العامة لحماية البيانات (DSGVO)، مبادئ حماية البيانات، البيانات الشخصية وأمن البيانات',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'dsgvo',

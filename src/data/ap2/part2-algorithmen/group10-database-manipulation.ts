@@ -10,6 +10,7 @@ export const databaseManipulation: TopicGroup = {
     de: 'INSERT, UPDATE, DELETE, ALTER TABLE und Daten-Constraints',
     ar: 'INSERT و UPDATE و DELETE و ALTER TABLE وقيود البيانات',
   },
+  priority: 'high',
   topics: [
     {
       id: 'sql-insert',

@@ -10,6 +10,7 @@ export const umlModeling: TopicGroup = {
     de: 'Unified Modeling Language (UML) Diagrammtypen zur Modellierung von Softwaresystemen',
     ar: 'أنواع مخططات لغة النمذجة الموحدة (UML) لنمذجة أنظمة البرمجيات',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'klassendiagramm',

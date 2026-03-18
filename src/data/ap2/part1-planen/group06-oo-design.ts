@@ -10,6 +10,7 @@ export const ooDesign: TopicGroup = {
     de: 'Grundlagen der objektorientierten Programmierung: Klassen, Vererbung, Polymorphismus und Kapselung',
     ar: 'أساسيات البرمجة كائنية التوجه: الفئات، الوراثة، تعدد الأشكال والتغليف',
   },
+  priority: 'high',
   topics: [
     {
       id: 'classes',

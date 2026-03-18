@@ -10,6 +10,7 @@ export const arbeitsrecht: TopicGroup = {
     de: 'Grundlagen des Arbeitsrechts: Arbeitsverträge, Kündigungsschutz, Tarifrecht und Betriebsvereinbarungen',
     ar: 'أساسيات قانون العمل: عقود العمل، حماية الفصل، قانون التعرفة واتفاقيات العمل',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'arbeitsvertrag',

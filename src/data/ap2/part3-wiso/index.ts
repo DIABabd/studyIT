@@ -26,20 +26,24 @@ export const part3Wiso: ExamPart = {
     ar: 'الأسس الاقتصادية والاجتماعية',
   },
   topicGroups: [
+    // Sehr wichtig
     arbeitsrecht,
-    mitbestimmung,
     sozialversicherung,
-    wirtschaftlicheGrundlagen,
-    wirtschaftskreislauf,
-    unternehmensorganisation,
-    finanzierungKostenrechnung,
-    steuern,
     vertragsrecht,
-    personalwesen,
+    finanzierungKostenrechnung,
+    // Wichtig
+    mitbestimmung,
+    wirtschaftlicheGrundlagen,
+    steuern,
+    unternehmensorganisation,
+    // Mittel
+    wirtschaftskreislauf,
     datenschutzItRecht,
+    personalwesen,
+    digitalEconomy,
+    // Weniger wichtig
     nachhaltigkeit,
     internationalTrade,
-    digitalEconomy,
     basicAccounting,
   ],
 };

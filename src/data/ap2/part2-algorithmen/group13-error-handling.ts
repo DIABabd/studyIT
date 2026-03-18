@@ -10,6 +10,7 @@ export const errorHandling: TopicGroup = {
     de: 'Eingabevalidierung, Null-Checks, Fehlerbehandlungslogik und Grenzwertbedingungen',
     ar: 'التحقق من المدخلات، فحص Null، منطق معالجة الأخطاء والشروط الحدية',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'input-validation',

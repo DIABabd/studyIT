@@ -10,6 +10,7 @@ export const functionsMethods: TopicGroup = {
     de: 'Definition von Funktionen, Parameter, Rückgabewerte, Variablen-Scope und Rekursion',
     ar: 'تعريف الدوال، المعاملات، القيم المُرجعة، نطاق المتغيرات والتكرار الذاتي',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'function-definition',

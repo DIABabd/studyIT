@@ -10,6 +10,7 @@ export const nachhaltigkeit: TopicGroup = {
     de: 'Nachhaltigkeit, Umweltpolitik und Energiepolitik im wirtschaftlichen Kontext',
     ar: 'الاستدامة والسياسة البيئية وسياسة الطاقة في السياق الاقتصادي',
   },
+  priority: 'low',
   topics: [
     {
       id: 'nachhaltigkeit',

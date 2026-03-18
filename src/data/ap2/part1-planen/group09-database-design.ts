@@ -10,6 +10,7 @@ export const databaseDesign: TopicGroup = {
     de: 'Grundlagen des Datenbankentwurfs: ER-Modell, Schlüssel, Normalisierung und relationale Strukturen',
     ar: 'أساسيات تصميم قواعد البيانات: نموذج ER، المفاتيح، التطبيع والهياكل العلائقية',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'er-model',

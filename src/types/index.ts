@@ -20,11 +20,14 @@ export interface ExamPart {
   topicGroups: TopicGroup[];
 }
 
+export type Priority = 'very-high' | 'high' | 'medium' | 'low';
+
 export interface TopicGroup {
   id: string;
   name: BilingualText;
   description: BilingualText;
   topics: Topic[];
+  priority?: Priority;
 }
 
 export interface Topic {

@@ -27,20 +27,24 @@ export const part2Algorithmen: ExamPart = {
     ar: 'الخوارزميات وهياكل البيانات ومفاهيم البرمجة',
   },
   topicGroups: [
+    // Sehr wichtig
+    databaseQueries,
     coreBasics,
     arraysCollections,
     functionsMethods,
     ooAlgorithmTasks,
+    // Wichtig
     sortingAlgorithms,
     searchingAlgorithms,
-    algorithmDesign,
     softwareTesting,
-    databaseQueries,
     databaseManipulation,
     dataProcessing,
-    dataStructures,
-    errorHandling,
+    // Mittel
+    algorithmDesign,
     apiBackendLogic,
+    errorHandling,
     mathematicalLogic,
+    // Weniger wichtig
+    dataStructures,
   ],
 };

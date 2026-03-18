@@ -10,6 +10,7 @@ export const designPatterns: TopicGroup = {
     de: 'Bewährte Lösungsmuster für wiederkehrende Entwurfsprobleme in der Softwareentwicklung',
     ar: 'أنماط حلول مجربة لمشاكل التصميم المتكررة في تطوير البرمجيات',
   },
+  priority: 'high',
   topics: [
     {
       id: 'observer-pattern',

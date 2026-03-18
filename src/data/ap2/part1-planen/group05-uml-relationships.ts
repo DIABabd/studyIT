@@ -10,6 +10,7 @@ export const umlRelationships: TopicGroup = {
     de: 'Beziehungstypen in UML-Klassendiagrammen: Assoziation, Aggregation, Komposition, Vererbung und mehr',
     ar: 'أنواع العلاقات في مخططات فئات UML: الارتباط، التجميع، التركيب، الوراثة والمزيد',
   },
+  priority: 'high',
   topics: [
     {
       id: 'association',

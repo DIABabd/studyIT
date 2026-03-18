@@ -10,6 +10,7 @@ export const softwareArchitecture: TopicGroup = {
     de: 'Architekturmuster und -stile für die Strukturierung von Softwaresystemen',
     ar: 'أنماط وأساليب معمارية لهيكلة أنظمة البرمجيات',
   },
+  priority: 'low',
   topics: [
     {
       id: 'client-server-architecture',

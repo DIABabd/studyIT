@@ -10,6 +10,7 @@ export const apiBackendLogic: TopicGroup = {
     de: 'HTTP-Anfragen, API-Endpunkte, Response-Erzeugung und Datenfilterung im Backend',
     ar: 'طلبات HTTP، نقاط نهاية API، إنشاء الاستجابة وتصفية البيانات في الخلفية',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'http-request-handling',

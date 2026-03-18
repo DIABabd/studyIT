@@ -10,6 +10,7 @@ export const apiDesign: TopicGroup = {
     de: 'Grundlagen des API-Designs: REST-Architektur, HTTP-Methoden, Datenformate und Statuscodes',
     ar: 'أساسيات تصميم API: هندسة REST، أساليب HTTP، صيغ البيانات وأكواد الحالة',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'rest-architecture',

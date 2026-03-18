@@ -10,6 +10,7 @@ export const arraysCollections: TopicGroup = {
     de: 'Eindimensionale und mehrdimensionale Arrays, Traversierung, Suche und Filterung',
     ar: 'المصفوفات أحادية ومتعددة الأبعاد، التمرير، البحث والتصفية',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'arrays-1d',

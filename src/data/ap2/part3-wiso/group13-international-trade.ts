@@ -10,6 +10,7 @@ export const internationalTrade: TopicGroup = {
     de: 'Grundlagen des internationalen Handels: Import, Export und Zollwesen',
     ar: 'أساسيات التجارة الدولية: الاستيراد والتصدير والشؤون الجمركية',
   },
+  priority: 'low',
   topics: [
     {
       id: 'import',

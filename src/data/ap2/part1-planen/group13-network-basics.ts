@@ -10,6 +10,7 @@ export const networkBasics: TopicGroup = {
     de: 'Grundlegende Netzwerkkonzepte: Netzwerktypen, Ethernet und MAC-Adressen',
     ar: 'مفاهيم الشبكات الأساسية: أنواع الشبكات وإيثرنت وعناوين MAC',
   },
+  priority: 'low',
   topics: [
     {
       id: 'lan',

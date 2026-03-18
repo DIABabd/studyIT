@@ -10,6 +10,7 @@ export const wirtschaftlicheGrundlagen: TopicGroup = {
     de: 'Grundlagen der Marktwirtschaft: Angebot und Nachfrage, Preisbildung, Wettbewerb und Marktformen',
     ar: 'أساسيات اقتصاد السوق: العرض والطلب، تكوين الأسعار، المنافسة وأشكال السوق',
   },
+  priority: 'high',
   topics: [
     {
       id: 'angebot-nachfrage',

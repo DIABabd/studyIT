@@ -10,6 +10,7 @@ export const coreBasics: TopicGroup = {
     de: 'Variablen, Datentypen, Kontrollstrukturen und grundlegende Programmierkonzepte',
     ar: 'المتغيرات وأنواع البيانات وهياكل التحكم ومفاهيم البرمجة الأساسية',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'variables',

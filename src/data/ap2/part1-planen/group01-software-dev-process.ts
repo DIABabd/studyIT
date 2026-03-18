@@ -10,6 +10,7 @@ export const softwareDevProcess: TopicGroup = {
     de: 'Überblick über klassische und agile Vorgehensmodelle in der Softwareentwicklung',
     ar: 'نظرة عامة على النماذج التقليدية والمرنة في تطوير البرمجيات',
   },
+  priority: 'high',
   topics: [
     {
       id: 'classical-project-management',

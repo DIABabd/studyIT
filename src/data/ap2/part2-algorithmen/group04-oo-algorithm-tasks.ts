@@ -10,6 +10,7 @@ export const ooAlgorithmTasks: TopicGroup = {
     de: 'Arbeiten mit Objekten, Attributzugriff, Getter/Setter und Objekt-Arrays',
     ar: 'العمل مع الكائنات، الوصول للخصائص، Getter/Setter ومصفوفات الكائنات',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'working-with-objects',

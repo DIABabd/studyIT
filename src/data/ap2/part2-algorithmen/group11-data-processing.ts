@@ -10,6 +10,7 @@ export const dataProcessing: TopicGroup = {
     de: 'Aggregation, Durchschnitts- und Differenzberechnung, Zeitberechnungen und Filterung',
     ar: 'التجميع، حساب المتوسطات والفروقات، حسابات الوقت والتصفية',
   },
+  priority: 'high',
   topics: [
     {
       id: 'aggregating-values',

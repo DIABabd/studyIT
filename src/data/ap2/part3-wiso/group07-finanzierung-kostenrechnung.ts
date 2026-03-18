@@ -10,6 +10,7 @@ export const finanzierungKostenrechnung: TopicGroup = {
     de: 'Grundlagen der betrieblichen Kostenrechnung: Umsatz, Gewinn, Kostenarten und Break-even-Analyse',
     ar: 'أساسيات محاسبة التكاليف في المنشأة: الإيرادات، الربح، أنواع التكاليف وتحليل نقطة التعادل',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'umsatz',

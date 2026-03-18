@@ -10,6 +10,7 @@ export const mitbestimmung: TopicGroup = {
     de: 'Betriebliche Mitbestimmung, Betriebsrat, Jugend- und Auszubildendenvertretung sowie Betriebsversammlungen',
     ar: 'المشاركة في صنع القرار في المنشأة، مجلس العمل، تمثيل الشباب والمتدربين واجتماعات المنشأة',
   },
+  priority: 'high',
   topics: [
     {
       id: 'betriebsrat',

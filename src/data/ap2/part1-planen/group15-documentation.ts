@@ -10,6 +10,7 @@ export const documentation: TopicGroup = {
     de: 'Arten der Softwaredokumentation: Technische, Benutzer-, Projekt- und Wartungsdokumentation',
     ar: 'أنواع توثيق البرمجيات: التوثيق التقني وتوثيق المستخدم والمشروع والصيانة',
   },
+  priority: 'low',
   topics: [
     {
       id: 'technical-documentation',

@@ -10,6 +10,7 @@ export const digitalEconomy: TopicGroup = {
     de: 'Digitalisierung, Automatisierung und Industrie 4.0 im wirtschaftlichen Kontext',
     ar: 'الرقمنة والأتمتة والصناعة 4.0 في السياق الاقتصادي',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'digitalisierung',

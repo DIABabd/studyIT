@@ -10,6 +10,7 @@ export const steuern: TopicGroup = {
     de: 'Grundlagen des deutschen Steuersystems: Einkommensteuer, Umsatzsteuer, Körperschaftsteuer und Gewerbesteuer',
     ar: 'أساسيات النظام الضريبي الألماني: ضريبة الدخل، ضريبة المبيعات، ضريبة الشركات والضريبة التجارية',
   },
+  priority: 'high',
   topics: [
     {
       id: 'einkommensteuer',

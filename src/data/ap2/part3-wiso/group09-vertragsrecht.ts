@@ -10,6 +10,7 @@ export const vertragsrecht: TopicGroup = {
     de: 'Grundlagen des Vertragsrechts: Kaufvertrag, Vertragsabschluss, Sachmängel, Gewährleistung und Widerrufsrecht',
     ar: 'أساسيات قانون العقود: عقد الشراء، إبرام العقد، العيوب المادية، الضمان وحق الانسحاب',
   },
+  priority: 'very-high',
   topics: [
     {
       id: 'kaufvertrag',

@@ -3,6 +3,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { useProgress } from '../../hooks/useProgress';
 import { builtInExams } from '../../data/exams';
 import { TopicItem } from './TopicItem';
+import { PriorityBadge } from '../ui/PriorityBadge';
 import { t as bt } from '../../utils/content';
 import type { TopicGroup } from '../../types';
 
@@ -45,6 +46,9 @@ export function TopicGroupAccordion({ group, examId, partId, index, defaultOpen 
         <span className="flex-1 font-medium text-sm text-text truncate">
           {bt(group.name, lang)}
         </span>
+        {group.priority && (
+          <PriorityBadge priority={group.priority} />
+        )}
         <span className={`text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0 ${
           stats.completed === stats.total && stats.total > 0
             ? 'bg-secondary/10 text-secondary'

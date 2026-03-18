@@ -27,20 +27,24 @@ export const part1Planen: ExamPart = {
     ar: 'تخطيط وتصميم المنتجات البرمجية',
   },
   topicGroups: [
-    softwareDevProcess,
+    // Sehr wichtig
+    umlModeling,
+    databaseDesign,
     projectManagement,
     requirementsEngineering,
-    umlModeling,
+    // Wichtig
     umlRelationships,
-    ooDesign,
     designPatterns,
-    softwareArchitecture,
-    databaseDesign,
-    uiUxDesign,
-    securityDataProtection,
-    apiDesign,
-    networkBasics,
+    softwareDevProcess,
+    ooDesign,
+    // Mittel
     softwareQualityTesting,
+    apiDesign,
+    securityDataProtection,
+    uiUxDesign,
+    // Weniger wichtig
+    softwareArchitecture,
+    networkBasics,
     documentation,
   ],
 };

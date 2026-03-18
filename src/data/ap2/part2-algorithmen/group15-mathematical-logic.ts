@@ -10,6 +10,7 @@ export const mathematicalLogic: TopicGroup = {
     de: 'Zähler, Statistiken, Prozentberechnungen, Differenz- und Zeitberechnungen',
     ar: 'العدادات والإحصائيات وحسابات النسب المئوية والفروقات والوقت',
   },
+  priority: 'medium',
   topics: [
     {
       id: 'counters-statistics',
