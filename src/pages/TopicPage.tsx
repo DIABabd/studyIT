@@ -42,7 +42,7 @@ export function TopicPage() {
         <p className="text-sm text-text-muted mt-1">{bt(group.name, lang)}</p>
       </div>
 
-      <TopicContent content={topic.content} />
+      <TopicContent content={topic.content} topicId={topic.id} />
 
       <div className="mt-6">
         <UserAttachments topicPath={topicPath} />

@@ -28,7 +28,14 @@
     "markIncomplete": "وضع علامة غير مكتمل",
     "completed": "مكتمل",
     "notCompleted": "مفتوح",
-    "media": "المواد"
+    "media": "المواد",
+    "examQuestions": "أسئلة الامتحان",
+    "examQuestionsCount": "{{count}} سؤال من امتحانات التخرج",
+    "examQuestionsCount_other": "{{count}} أسئلة من امتحانات التخرج",
+    "showScenario": "إظهار الحالة الابتدائية",
+    "hideScenario": "إخفاء الحالة الابتدائية",
+    "points": "نقاط",
+    "aufgabe": "السؤال"
   },
   "attachments": {
     "title": "ملاحظاتي وملفاتي",

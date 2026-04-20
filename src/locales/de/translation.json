@@ -28,7 +28,14 @@
     "markIncomplete": "Als unerledigt markieren",
     "completed": "Erledigt",
     "notCompleted": "Offen",
-    "media": "Materialien"
+    "media": "Materialien",
+    "examQuestions": "Prüfungsfragen",
+    "examQuestionsCount": "{{count}} Aufgabe aus den Abschlussprüfungen",
+    "examQuestionsCount_other": "{{count}} Aufgaben aus den Abschlussprüfungen",
+    "showScenario": "Ausgangssituation anzeigen",
+    "hideScenario": "Ausgangssituation ausblenden",
+    "points": "Punkte",
+    "aufgabe": "Aufgabe"
   },
   "attachments": {
     "title": "Meine Notizen & Dateien",

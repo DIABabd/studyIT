@@ -2,10 +2,54 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { t as bt } from '../../utils/content';
-import type { TopicContent as TopicContentType, MediaBlock } from '../../types';
+import type { TopicContent as TopicContentType, MediaBlock, ExamQuestion } from '../../types';
+import { examQuestionsByTopicId } from '../../data/ap2/part1-planen/exam-questions';
 
 interface TopicContentProps {
   content: TopicContentType;
+  topicId?: string;
+}
+
+function ExamQuestionCard({ question }: { question: ExamQuestion }) {
+  const { t } = useTranslation();
+  const [showScenario, setShowScenario] = useState(false);
+
+  return (
+    <article className="bg-white rounded-lg border border-purple-200 p-4">
+      <header className="flex flex-wrap items-center gap-2 mb-2">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-purple-100 text-purple-800 text-xs font-semibold">
+          {question.examLabel}
+        </span>
+        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 text-xs font-medium">
+          {t('topic.aufgabe')} {question.number}
+        </span>
+        {question.points != null && (
+          <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 text-xs font-medium">
+            {question.points} {t('topic.points')}
+          </span>
+        )}
+      </header>
+      <p className="text-sm text-text leading-relaxed whitespace-pre-wrap">
+        {question.text}
+      </p>
+      {question.scenario && (
+        <div className="mt-2">
+          <button
+            type="button"
+            onClick={() => setShowScenario((v) => !v)}
+            className="text-xs text-purple-700 hover:text-purple-900 underline underline-offset-2"
+          >
+            {showScenario ? t('topic.hideScenario') : t('topic.showScenario')}
+          </button>
+          {showScenario && (
+            <p className="mt-2 text-xs text-text-muted leading-relaxed italic bg-surface rounded-md p-2 border border-border">
+              {question.scenario}
+            </p>
+          )}
+        </div>
+      )}
+    </article>
+  );
 }
 
 function MediaBlockRenderer({ block }: { block: MediaBlock }) {
@@ -68,9 +112,12 @@ function MediaBlockRenderer({ block }: { block: MediaBlock }) {
   }
 }
 
-export function TopicContent({ content }: TopicContentProps) {
+export function TopicContent({ content, topicId }: TopicContentProps) {
   const { t } = useTranslation();
   const { lang } = useLanguage();
+
+  const examQuestions: ExamQuestion[] =
+    (topicId && examQuestionsByTopicId[topicId]) || content.examQuestions || [];
 
   return (
     <div className="space-y-6">
@@ -149,6 +196,26 @@ export function TopicContent({ content }: TopicContentProps) {
         </h3>
         <p className="text-text leading-relaxed">{bt(content.examRelevance, lang)}</p>
       </section>
+
+      {/* Prüfungsfragen (exam questions from past IHK Abschlussprüfungen) */}
+      {examQuestions.length > 0 && (
+        <section className="bg-white rounded-xl border border-purple-200 p-5">
+          <h3 className="flex items-center gap-2 text-sm font-semibold text-purple-700 mb-1 uppercase tracking-wide">
+            <span className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-base">
+              📚
+            </span>
+            {t('topic.examQuestions')}
+          </h3>
+          <p className="text-xs text-text-muted mb-4 ms-10">
+            {t('topic.examQuestionsCount', { count: examQuestions.length })}
+          </p>
+          <div className="space-y-3">
+            {examQuestions.map((q, i) => (
+              <ExamQuestionCard key={`${q.examLabel}-${q.number}-${i}`} question={q} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Summary */}
       <section className="bg-primary/5 rounded-xl border border-primary/20 p-5">

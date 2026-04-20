@@ -43,6 +43,15 @@ export interface TopicContent {
   examRelevance: BilingualText;
   summary: BilingualText;
   media?: MediaBlock[];
+  examQuestions?: ExamQuestion[];
+}
+
+export interface ExamQuestion {
+  examLabel: string;
+  number: string;
+  points?: number;
+  text: string;
+  scenario?: string;
 }
 
 export type MediaBlock =
